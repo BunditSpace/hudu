@@ -1,0 +1,17 @@
+<div class="card-container">
+    <md-card>
+    <div>
+        <conversation-detail
+            (saved)="saveConversation($event)" (cancelled)="resetConversation($event)"
+            [conversation]="selectedConversation | async">Pick your Fancy:
+        </conversation-detail>
+    </div>
+    </md-card>
+    <md-card>
+    <div>
+        <conversation-list [conversations]="conversations | async"
+            (selected)="selectConversation($event)" (deleted)="deleteConversation($event)">
+        </conversation-list>
+    </div>
+    </md-card>
+</div>

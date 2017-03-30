@@ -1,0 +1,21 @@
+<div *ngFor="let conversation of conversations" (click)="selected.emit(conversation)"
+  class="recipe-card">
+  <div>
+    <h2>Topic : {{conversation.topic}}</h2>
+  </div>
+  <div>
+    Create Date : {{conversation.date}}  Talk with : {{conversation.talkwith}}  {{conversation.relationship}}
+  </div>
+  <div>
+    Rating :
+    <rating [interactive]="false" [rate]="conversation.rating"></rating>
+    {{conversation.rating}}
+  </div>
+  <div>
+    <button md-raised-button color="warn" (click)="deleted.emit(conversation); $event.stopPropagation();">
+      <i>Delete</i>
+    </button>
+  </div>
+</div>
+
+
